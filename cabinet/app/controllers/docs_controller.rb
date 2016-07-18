@@ -6,7 +6,6 @@ class DocsController < ApplicationController
     @docs= Doc.where(user_id: current_user)
   end
 
-
   def create
     @doc = current_user.docs.build
     if @doc.save
@@ -14,6 +13,7 @@ class DocsController < ApplicationController
     else
       render 'new'
     end
+
   end
 
   def new
@@ -35,7 +35,6 @@ class DocsController < ApplicationController
 
   def show
   end
-
 
   def destroy
     @doc.destroy
